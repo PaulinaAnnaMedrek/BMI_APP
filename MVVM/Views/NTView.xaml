@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp6.MVVM.Views.NTView"
+             Title="Add New Task" >
+
+
+    <Grid >
+        <Frame Grid.Row="0" Margin="20,20,20,20" BackgroundColor="#91AFBC" HeightRequest="180"  VerticalOptions="Start" >
+            <Entry Placeholder="ENTER YOUR TASK"
+               Style="{StaticResource Tasks}"
+               Text="{Binding Task}"/>
+        </Frame>
+
+        <CollectionView 
+                        Margin="15,15,15,15"
+                        ItemsSource="{Binding Categoriess}"
+                        HeightRequest="200"
+                        WidthRequest="400"
+                        BackgroundColor="Transparent">
+
+        
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame HeightRequest="60" WidthRequest="360" Margin="20,80,20,20" VerticalOptions="Center">
+                        <RadioButton Content="Show Progress"
+                                     VerticalOptions="Start"
+                                     GroupName="Category" 
+                                     IsChecked="{Binding Select}"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <HorizontalStackLayout 
+                               Margin="10"
+                               HorizontalOptions="Center"
+                               Spacing="15">
+
+            <Button CornerRadius="15" Text="Add Your Task" Clicked="AddTask"  HeightRequest="40" WidthRequest="340"  HorizontalOptions="Center" Margin="0,200,30,0"/>
+           
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

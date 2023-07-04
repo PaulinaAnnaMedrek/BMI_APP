@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp6.BMI"
+             Title="BMI"
+             Shell.NavBarIsVisible="False">
+
+
+    <Grid >
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Offset="0.0" Color="#195573"/>
+                <GradientStop Offset="0.6" Color="#8FAFC4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+        </Grid.RowDefinitions>
+
+
+        <Frame Grid.Row="1"  CornerRadius="30" Margin="20,0,20,20"  BackgroundColor="Transparent" BorderColor="Transparent" >
+
+            <VerticalStackLayout Margin="0,20,0,0">
+                <Frame HeightRequest="80" WidthRequest="280" BackgroundColor="#69879B" Margin="0,10,0,0" BorderColor="Transparent">
+                    <VerticalStackLayout>
+                        <Label Text="WEIGHT ( KG )" FontFamily="Rant" FontSize="25" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Slider x:Name="WeightSlider" ThumbColor="White" MinimumTrackColor="#79A8C0" Minimum="0" Maximum="200" Value="{Binding BMI.Weight}">
+                            
+                        </Slider>
+                    </VerticalStackLayout>
+                    
+                </Frame>
+
+                <Frame BackgroundColor="#69879B" HeightRequest="50" WidthRequest="280" Margin="0,5,0,0" BorderColor="Transparent">
+                    <VerticalStackLayout HeightRequest="50" WidthRequest="280" >
+                        <Grid BackgroundColor="Transparent" HeightRequest="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="YOUR WEIGHT:"  VerticalOptions="Center"  FontSize="23" Margin="160,30,0,0" HeightRequest="50" WidthRequest="280" FontAttributes="Bold" FontFamily="Rant" TextColor="White"/>
+                            <Label  Grid.Column="1" Text="{Binding Source={x:Reference WeightSlider}, Path=Value, StringFormat='{0:F0} kg'}" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="End" Margin="0,26,25,0" FontSize="23" FontFamily="Rant" TextColor="White" FontAttributes="Bold"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame HeightRequest="80" WidthRequest="280" BackgroundColor="#69879B" Margin="0,30,0,0" BorderColor="Transparent">
+                    <VerticalStackLayout>
+                        <Label Text="GROWTH ( CM )"  FontFamily="Rant" FontSize="25" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Slider  x:Name="GrowthSlider" ThumbColor="White" MinimumTrackColor="#79A8C0" Minimum="25" Maximum="200" Value="{Binding BMI.Growth}">
+
+                        </Slider>
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <Frame BackgroundColor="#69879B" HeightRequest="50" WidthRequest="280" Margin="0,5,0,0" BorderColor="Transparent">
+                    <VerticalStackLayout HeightRequest="50" WidthRequest="280" >
+                        <Grid BackgroundColor="Transparent" HeightRequest="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="YOUR GROWTH:"  VerticalOptions="Center"  FontSize="23" Margin="160,30,0,0" HeightRequest="50" WidthRequest="280" FontAttributes="Bold" FontFamily="Rant" TextColor="White"/>
+                            <Label  Grid.Column="1" Text="{Binding Source={x:Reference GrowthSlider}, Path=Value, StringFormat='{0:F0} cm'}" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="End" Margin="0,28,13,0" FontSize="23" FontFamily="Rant" TextColor="White" FontAttributes="Bold"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+                
+                
+            </VerticalStackLayout>
+            
+        </Frame>
+
+        <ImageButton Source="home" HeightRequest="135" VerticalOptions="Start" Clicked="ImageButton_Clicked" HorizontalOptions="Center" Margin="20,0,0,0"/>
+
+        <Frame Grid.Row="0" HeightRequest="240" WidthRequest="345" CornerRadius="30" Margin="20,40,20,-100" BackgroundColor="Transparent" BorderColor="Transparent"   >
+
+            <VerticalStackLayout>
+
+                
+
+
+                <Label Text="YOUR BMI" FontFamily="Rant" FontSize="40" FontAttributes="Bold"  HorizontalOptions="Center" Margin="0,40,0,0" TextColor="Black"/>
+
+                <Frame CornerRadius="50" HeightRequest="120" WidthRequest="200" BackgroundColor="#69879B" Margin="0,2,0,0" BorderColor="Transparent">
+                    <VerticalStackLayout>
+                        <Label  Text="{Binding BMI.Result , StringFormat='{0:F2}'}" FontSize="40" FontFamily="Rant" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0" TextColor="White"/>
+                        <Label Text="{Binding BMI.RText}" HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    
+                </Frame>
+            </VerticalStackLayout>
+            
+        </Frame>
+
+        
+    </Grid>
+</ContentPage>
