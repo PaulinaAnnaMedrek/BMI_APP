@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile = "true" ?>
+
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="DarkGray">#918888</Color>
+    <Color x:Key="AquaMarin">#195573</Color>
+    <Color x:Key="DarkBlue">#212B4F</Color>
+    <Color x:Key="Black">#00000B</Color>
+
+    <Style Class="DarkGray" TargetType="Label">
+        <Setter Property="FontSize" Value="35"/>
+        <Setter Property="FontFamily" Value="Simp"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="{StaticResource Black}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
+
+    <Style Class="Black" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Simp"/>
+    </Style>
+    
+    <Style Class="Black2" TargetType="Label">
+        
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Simp"/>
+    </Style>
+
+    <Style Class="Black1" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontFamily" Value="Simp"/>
+        <Setter Property="TextColor" Value="{StaticResource Black}"/>
+    </Style>
+
+
+
+    <Shadow x:Key="shadow"
+            Brush="gray"
+            Opacity="0.2"
+            Radius="15"
+            Offset="10,15"/>
+
+    <Style  TargetType="RoundRectangle">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Fill" Value="white"/>
+        <Setter Property="WidthRequest" Value="200"/>
+        <Setter Property="Shadow" Value="{StaticResource shadow}"/>
+
+    </Style>
+
+    <Style Class="Shdw" TargetType="Label">
+        
+        <Setter Property="Shadow" Value="{StaticResource shadow}"/>
+    </Style>
+
+
+    <Style x:Key="Tasks" TargetType="Entry">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontFamily" Value="Rant"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource DarkGray}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
+
+    <EllipseGeometry x:Key="Circle" 
+                     Center="50,50"
+                     RadiusX="30"
+                     RadiusY="30"/>
+
+    <Style x:Key="Button+" TargetType="Button">
+        <Setter  Property="FontAttributes" Value="Bold"/>
+        <Setter  Property="FontSize" Value="Large"/>
+        <Setter  Property="HeightRequest" Value="100"/>
+        <Setter  Property="WidthRequest" Value="100"/>
+        <Setter  Property="VerticalOptions" Value="Start"/>
+        <Setter Property="Margin" Value="0,25,-30,0"/>
+        <Setter  Property="HorizontalOptions" Value="End"/>
+        <Setter Property="Clip" Value="{StaticResource Circle}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkBlue}"/>
+    </Style>
+
+
+
+</ResourceDictionary>
